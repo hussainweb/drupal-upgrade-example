@@ -1,0 +1,28 @@
+name: migr
+recipe: drupal8
+
+services:
+  appserver:
+    type: php:7.4
+    via: nginx
+    webroot: d9/web
+  database:
+    type: mariadb:10.4
+    overrides:
+      image: bitnami/mariadb:10.4
+  cache:
+    type: redis:5
+
+tooling:
+  drush:
+    service: appserver
+    cmd: /app/vendor/bin/drush
+  drupal:
+    service: appserver
+    cmd: /app/vendor/bin/drupal
+  redis-cli:
+    service: cache
+
+config:
+  conf:
+    php: .lando/php.ini
