@@ -15,6 +15,15 @@ $databases['default']['default'] = [
   'port' => $lando_info['database']['internal_connection']['port'],
 ];
 
+$databases['d7simple']['default'] = [
+  'driver' => 'mysql',
+  'database' => $lando_info['d7simple_db']['creds']['database'],
+  'username' => $lando_info['d7simple_db']['creds']['user'],
+  'password' => $lando_info['d7simple_db']['creds']['password'],
+  'host' => $lando_info['d7simple_db']['internal_connection']['host'],
+  'port' => $lando_info['d7simple_db']['internal_connection']['port'],
+];
+
 $settings['hash_salt'] = md5(getenv('LANDO_HOST_IP'));
 
 // Set Redis as the default backend for any cache bin not otherwise specified.
