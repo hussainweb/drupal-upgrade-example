@@ -4,6 +4,8 @@ recipe: drupal8
 proxy:
   d7simplephp:
     - d7simple.migr.lndo.site
+  d7complexphp:
+    - d7complex.migr.lndo.site
 
 services:
   appserver:
@@ -25,6 +27,18 @@ services:
       - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/8.3.3/drush.phar
       - chmod +x /usr/local/bin/drush
   d7simpledb:
+    type: mariadb:10.4
+    overrides:
+      image: bitnami/mariadb:10.4
+
+  d7complexphp:
+    type: php:7.3
+    via: apache
+    webroot: d7complex
+    build:
+      - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/8.3.3/drush.phar
+      - chmod +x /usr/local/bin/drush
+  d7complexdb:
     type: mariadb:10.4
     overrides:
       image: bitnami/mariadb:10.4
