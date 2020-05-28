@@ -17,11 +17,11 @@ $databases['default']['default'] = [
 
 $databases['d7simple']['default'] = [
   'driver' => 'mysql',
-  'database' => $lando_info['d7simple_db']['creds']['database'],
-  'username' => $lando_info['d7simple_db']['creds']['user'],
-  'password' => $lando_info['d7simple_db']['creds']['password'],
-  'host' => $lando_info['d7simple_db']['internal_connection']['host'],
-  'port' => $lando_info['d7simple_db']['internal_connection']['port'],
+  'database' => $lando_info['d7simpledb']['creds']['database'],
+  'username' => $lando_info['d7simpledb']['creds']['user'],
+  'password' => $lando_info['d7simpledb']['creds']['password'],
+  'host' => $lando_info['d7simpledb']['internal_connection']['host'],
+  'port' => $lando_info['d7simpledb']['internal_connection']['port'],
 ];
 
 $settings['hash_salt'] = md5(getenv('LANDO_HOST_IP'));

@@ -2,7 +2,7 @@ name: migr
 recipe: drupal8
 
 proxy:
-  d7simple_php:
+  d7simplephp:
     - d7simple.migr.lndo.site
 
 services:
@@ -17,16 +17,15 @@ services:
   cache:
     type: redis:5
 
-  d7simple_php:
+  d7simplephp:
     type: php:7.3
     via: apache
     webroot: d7simple
-    build_as_root:
+    build:
       - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/8.3.3/drush.phar
       - chmod +x /usr/local/bin/drush
-  d7simple_db:
+  d7simpledb:
     type: mariadb:10.4
-    webroot: d7complex
     overrides:
       image: bitnami/mariadb:10.4
 
