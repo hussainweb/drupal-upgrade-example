@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3075100f2eadd088acde2a344274d4df",
+    "content-hash": "9cc72cda420f8844f23922565218a6c8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1848,17 +1848,11 @@
         },
         {
             "name": "drupal/paragraphs",
-            "version": "1.12.0",
+            "version": "dev-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/paragraphs.git",
-                "reference": "8.x-1.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.12.zip",
-                "reference": "8.x-1.12",
-                "shasum": "3b67d8af1160af42d93a4610be1e02869e428965"
+                "reference": "4f44470603eff9d11d0900ac45a64b50f2479405"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
@@ -1882,13 +1876,19 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-1.12",
-                    "datestamp": "1590066861",
+                    "version": "8.x-1.11+31-dev",
+                    "datestamp": "1590060943",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Field collections deriver and base migration": "https://www.drupal.org/files/issues/2020-05-26/paragraphs-entity_and_field_migration-2911244-127.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1925,7 +1925,8 @@
             "homepage": "https://www.drupal.org/project/paragraphs",
             "support": {
                 "source": "https://git.drupalcode.org/project/paragraphs"
-            }
+            },
+            "time": "2020-05-22T09:33:09+00:00"
         },
         {
             "name": "drupal/redis",
@@ -9248,7 +9249,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/paragraphs": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

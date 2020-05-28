@@ -12,7 +12,7 @@
         "drupal/migrate_plus": "^5.0.0",
         "drupal/migrate_tools": "^5.0.0",
         "drupal/migrate_upgrade": "^3.0.0",
-        "drupal/paragraphs": "^1.12",
+        "drupal/paragraphs": "1.x-dev",
         "drupal/redis": "^1.4",
         "drush/drush": "^9.7.1 | ^10.0",
         "vlucas/phpdotenv": "^4.0",
@@ -44,6 +44,11 @@
         }
     ],
     "extra": {
+        "patches": {
+            "drupal/paragraphs": {
+                "Field collections deriver and base migration": "https://www.drupal.org/files/issues/2020-05-26/paragraphs-entity_and_field_migration-2911244-127.patch"
+            }
+        },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal/core": "-p2"
