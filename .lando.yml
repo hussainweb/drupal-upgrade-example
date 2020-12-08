@@ -24,7 +24,7 @@ services:
     via: apache
     webroot: d7simple
     build:
-      - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/8.3.3/drush.phar
+      - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/8.4.5/drush.phar
       - chmod +x /usr/local/bin/drush
   d7simpledb:
     type: mariadb:10.4
@@ -36,7 +36,7 @@ services:
     via: apache
     webroot: d7complex
     build:
-      - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/8.3.3/drush.phar
+      - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/8.4.5/drush.phar
       - chmod +x /usr/local/bin/drush
   d7complexdb:
     type: mariadb:10.4
